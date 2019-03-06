@@ -89,5 +89,4 @@ nice way of saying thank you.
 
 ## Feedback and Suggestions
 We are always looking for ways to improve these events. If you have feedback you believe
-would help improve this document or the hackathons themselves, please email Tom
-Papatheodore (papatheodore@ornl.gov) with your suggestions.
+would help improve this document or the hackathons themselves, please feel free to open an issue in the repository, or contact Tom Papatheodore (papatheodore@ornl.gov) or Julia Levites (jlevites@nvidia.com) with your suggestions.
