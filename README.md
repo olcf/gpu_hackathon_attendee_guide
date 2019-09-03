@@ -1,6 +1,6 @@
 # GPU Hackathon Attendee Guide
 A GPU hackathon is a 5-day coding event in which your team of developers will prepare your
-application(s) to run on GPUs, or focus on optimizing your application(s) that currently run on GPUs. Your team should consist of three or more developers who are intimately familiar with (some part of) your application, and you will work alongside two mentors with GPU
+application(s) to run on GPUs, or focus on optimizing your application(s) that currently run on GPUs. Your team should consist of three or more developers who are intimately familiar with (some part of) your application, and you will work alongside 1-2 mentors with GPU
 programming expertise. The mentors come from universities, national laboratories,
 supercomputing centers, government institutions, and vendors.
 
@@ -13,7 +13,7 @@ on how to prepare for a hackathon. While each team will proceed differently in p
 
 ### Team Introductions
 In the weeks leading up to the event, the local hackathon organizer will send an email
-introducing your team to the mentors you will be working with. Your team should then schedule a web meeting to address the following topics:
+introducing your team to the mentor(s) you will be working with. Your team and mentor(s) should then schedule a web meeting to address the following topics:
 
 * Team/Mentor introductions
 * Discuss code(s) your team will be working on (give code access where appropriate)
@@ -26,12 +26,10 @@ This initial meeting will help get your team organized and ensure that everyone 
 It is beneficial for all of your team members to obtain access to the compute system(s) they
 intend to use at the hackathon before the start of the event. This gives you the opportunity to familiarize yourself with aspects of the system that might be new to you (e.g. different batch scheduler, job launcher, etc.) and also to get your application compiled and running on the system. This helps to ensure your team is ready to start programming GPUs on the system when you arrive for the event, instead of spending time learning how to use the system.
 
-NOTE: It might not always be possible to obtain access to the compute system before the event due to restrictions by some institutions.
-
 ### Preparing Your Code to Run on the Hackathon Compute System
 Although you might be using your application for production work already, that does not ensure it is ready for the work you will be performing at the hackathon. For example, if your code takes four hours to produce results, it will be difficult to test the many incremental changes you will likely be making to your code during the event. To address this point, this section outlines recommendations for preparing your application for the event.
 
-Ideally, your application should be limited to a few thousand lines of code. If you are working with a much larger application, it is preferable to extract specific kernels or a “mini-app” that contains only the relevant parts of the full application whenever possible. This makes the code more manageable for all your team members (including the mentors - who are likely not familiar with the code) and helps to eliminate potential problems with other parts of the code that are unrelated to the work actually being performed. Once you have reduced application running on the GPUs, you can add the changes you made into the full application to understand how it speeds up (or slows down) the application as a whole.
+Ideally, your application should be limited to a few thousand lines of code. If you are working with a much larger application, it is preferable to extract specific kernels or a “mini-app” that contains only the relevant parts of the full application whenever possible. This makes the code more manageable for all your team members (including the mentors - who are likely not familiar with the code) and helps to eliminate potential problems with other parts of the code that are unrelated to the work actually being performed. Once you have your reduced application running on the GPUs, you can add the changes you made into the full application to understand how it speeds up (or slows down) the application as a whole.
 
 Your code should also be self contained whenever possible. By eliminating external
 dependencies (e.g. netCDF), you will not need to rely on specific packages (or specific versions of packages) being available on the hackathon system. To do so, you can include any code needed for external dependencies within (or along side) your application. If this is not possible/practical, you should make the dependency known to the local hackathon organizer ahead of the event so it can be installed. In addition, your build system should be free of any specific system dependencies (e.g. Cray computing environment). Removing these external and system-specific dependencies will make it easier to get your code running on the hackathon system.
@@ -54,18 +52,18 @@ Another important aspect of preparation that is often overlooked is having a way
 correctness of your results. This is an important part of the hackathon workflow, so arriving with an automatic way of doing so (e.g. a correct results file which can be compared against new results with `diff`) can save more time for development. It is not uncommon for a team to get their code optimized and running blazing fast on the GPUs only to find that it is not giving the correct results!
 
 ## Attending a Hackathon
-During the hackathon, your team will work alongside your mentors on the goals your have
+During the hackathon, your team will work alongside your mentor(s) on the goals your have
 (hopefully) set during the pre-hackathon meetings. In addition, there are presentations and
 morning updates that your team will participate in.
 
 ### Introduction Presentations
 On Monday morning, the first order of business will be for one member of each team to give a
-short (5-7 minutes / 5-7 slides) presentation introducing their team. Ideally, this should include an introduction of your team members, a brief description of your application, a profile of your code (showing compute-intensive regions), and your goals for the week (parts of your code you will be targeting, anticipated speedup, intended programming model - e.g. OpenACC, CUDA, etc.).
+short (5 minutes / 5 slides) presentation introducing their team. Ideally, this should include an introduction of your team members, a very brief description of your application, a profile of your code (showing compute-intensive regions), and your goals for the week (parts of your code you will be targeting, anticipated speedup, intended programming model - e.g. OpenACC, CUDA, etc.).
 
-Also, remember that most participants are probably not familiar with your specific domain, so please keep the jargon to a minimum.
+>NOTE: It is important to keep these presentations brief to maximize the amount of time the teams have to hack code, so although the science behind you application is probably very interesting, please limit the presentation to the relevant parts of your code needed to convey your work at the hackathon. Also, remember that most participants are probably not familiar with your specific domain, so please keep the jargon to a minimum. 
 
 ### Morning Updates (Scrum Sessions)
-On Tuesday through Thursday mornings, each team will give a short (3-4 minute / 2-3 slides)
+On Tuesday through Thursday mornings, each team will give a short (3 minute / 2-3 slides)
 update, including
 
 * Progress made since last update
@@ -79,10 +77,9 @@ In addition to sharing your progress, these updates are good opportunities to ge
 On Friday morning, the teams will finish up their development work for the week and give a final presentation (5-7 minutes / 5-7 slides) detailing their accomplishments; issues they ran into, how they resolved them, speedups they obtained, as well as their closing thoughts on the event and what they learned. The final day typically ends around 1-3 PM to allow participants to arrange travel home.
 
 ## Acknowledgements
-If the work you accomplish at the hackathon leads to a future publication, we encourage you to recognize the mentors and hackathon in the acknowledgement section of the publication. E.g.,
+If the work you accomplish at the hackathon leads to a future publication, we encourage you to recognize the mentor(s) and hackathon in the acknowledgement section of the publication. E.g.,
 
-*The authors would like to thank [Name of Mentor(s)] for their contribution to this
-work during the [Year][Name of Specific Hackathon].*
+>*The authors would like to thank [Organizers of event] for organizing the [Year][Name of Specific Hackathon] and give special thanks to our mentors [Name of Mentor(s)] for their contributions to this work*
 
 Remember, the mentors volunteer their time to help at these events and such recognition is a
 nice way of saying thank you.
